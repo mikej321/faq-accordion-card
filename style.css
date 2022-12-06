@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --kumbh-sans: 'Kumbh Sans', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(var(--soft-violet) 20%,
+                              var(--soft-blue));
+}
+
+main.accordion {
+  background-color: var(--light-grayish-blue);
+  border: 1px solid black;
+  font-family: var(--kumbh-sans);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  border: none;
+  gap: 2rem;
+  padding: 0 2.5rem 5rem;
+  position: relative;
+  z-index: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  width: 250px;
+  position: absolute;
+  z-index: 1;
+  align-self: center;
+  top: -11.5rem;
+}
+
+main > h1 {
+  align-self: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-top: 13rem;
+  margin-bottom: 1rem; 
+}
+
+
+
+.header {
+  font-size: 1.4rem;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header > img {
+  cursor: pointer;
+  width: 8px;
+  height: 6px;
+}
+
+.header-5 {
+  
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+}
+
+.item .body {
+  height: 0;
+  overflow: hidden;
+  transition: height 1s ease;
+}
+
+.current-item .header {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.current-item .body {
+  height: 60px;
+}
+
+.body-text {
+  font-size: 1.4rem;
+  color: var(--dark-grayish-blue);
+  line-height: 1.9rem
+}
+
+.arrow {
+  transition: rotate 0.2s;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
