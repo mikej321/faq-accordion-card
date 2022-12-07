@@ -38,6 +38,12 @@ body {
   padding: 2rem;
   background: linear-gradient(var(--soft-violet) 20%,
                               var(--soft-blue));
+  
+}
+
+.accordion,
+.data {
+
 }
 
 main.accordion {
@@ -45,14 +51,19 @@ main.accordion {
   border: 1px solid black;
   font-family: var(--kumbh-sans);
   font-size: 1.2rem;
+  display: grid;
+  border-radius: 24px;
+  justify-items: center;
+  border: none;
+  padding: 3rem 2.5rem 3rem;
+  position: relative;
+  
+}
+
+.data {
   display: flex;
   flex-direction: column;
-  border-radius: 24px;
-  border: none;
-  gap: 2rem;
-  padding: 0 2.5rem 5rem;
-  position: relative;
-  z-index: 0;
+
 }
 
 img {
@@ -63,17 +74,22 @@ img {
 picture {
   width: 250px;
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   align-self: center;
   top: -11.5rem;
+  
 }
 
-main > h1 {
+.box {
+  display: none;
+}
+
+.data > h1 {
   align-self: center;
   font-size: 3rem;
   font-weight: 700;
-  margin-top: 13rem;
-  margin-bottom: 1rem; 
+  margin-top: 10rem;
+  margin-bottom: 4rem; 
 }
 
 
@@ -84,7 +100,7 @@ main > h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 1.5rem;
+  margin-bottom: 4rem;
 }
 
 .header > img {
@@ -115,6 +131,7 @@ main > h1 {
 
 .current-item .body {
   height: 60px;
+  margin-top: -2.5rem;
 }
 
 .body-text {
@@ -129,4 +146,72 @@ main > h1 {
 
 .rotate {
   transform: rotate(180deg);
+}
+
+
+@media (min-width: 600px) {
+
+  main.accordion {
+    max-width: 1000px;
+    padding: 1rem 10rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "picture data";
+    justify-items: unset;
+  }
+
+  picture {
+    grid-area: picture;
+    width: 500px;
+    top: 6rem;
+    right: 8rem;
+  }
+
+  .box {
+    display: block;
+    position: absolute;
+    top: 20rem;
+    right: 93rem;
+  }
+
+  .data {
+    grid-area: data;
+    position: relative;
+    bottom: 5rem;
+  }
+
+  .data > h1 {
+    align-self: start;
+  }
+
+  .header {
+    
+  }
+
+  .header > img {
+
+  }
+
+  .item {
+
+  }
+
+  .item .body {
+
+  }
+
+  .current-item .body {
+
+  }
+
+  .body-text {
+
+  }
+
+  .arrow {
+    
+  }
+
+  .rotate {
+
+  }
 }
